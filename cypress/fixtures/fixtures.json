@@ -1,0 +1,48 @@
+
+{
+  "userJson":{
+    "user":{
+      "id":122576,
+      "email":"testser2223@mail.com",
+      "createdAt":"2020-11-02T06:05:39.892Z",
+      "updatedAt":"2020-11-02T06:05:39.896Z",
+      "username":"dummy",
+      "bio":null,
+      "image":null,
+      "token":"eyJ0eXAiOiDKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTIyNTc2LCJ1c2VybmFtZSI6InRlc3RVc2VyMjIyMyIsImV4cCI6MTYwOTQ4ODQyMH0.Im2oTQsMeH37XVwaNHDAf1SPCyBsIcaTKWhoBcZUzTc"
+    }
+  },
+  "profileJson":{
+    "profile":{
+      "username":"Dummy",
+      "bio":null,
+      "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+      "following":false
+    }
+  },
+  "articleJson":{
+    "articles":[
+      {
+        "title":"Dummy article",
+        "slug":"dummyarticle-48z5oo",
+        "body":"This is the body of a dummy article",
+        "createdAt":"2020-11-02T17:20:50.296Z",
+        "updatedAt":"2020-11-02T17:20:50.296Z",
+        "tagList":[],
+        "description":"Dummy description",
+        "author":{
+          "username":"dummy",
+          "bio":null,
+          "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+          "following":false
+        },
+        "favorited":false,
+        "favoritesCount":0
+      }
+    ],
+    "articlesCount":1
+  },
+  "tagsJson":{
+    "tags":["‌","‌‌","‌‌‌","‌‌‌‌‌","‌‌‌‌","‌‌‌‌‌‌‌‌","‌‌‌‌‌‌‌","‌‌‌‌‌‌‌‌‌‌‌","‌‌‌‌‌‌","‌‌‌‌‌‌‌‌‌‌","HuManIty","Hu‌Man‌Ity","Gandhi","HITLER","SIDA","BlackLivesMatter","Black‌Lives‌Matter","test","dragons","butt"]
+  }
+}
