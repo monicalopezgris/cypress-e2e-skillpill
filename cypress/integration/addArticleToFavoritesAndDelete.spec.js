@@ -20,11 +20,17 @@ describe("User register", () => {
 
     cy.wait(2000) // Just for the exercice, bad practice!
 
-    // Get article "How to train your dragon" by author "micha" and add to favorites (click fav button)
-    
+    cy.get(".article-preview") // Get elements with class
+      .contains(".article-meta", "micha") // Get the one with "micha" on the meta data
+      .parent() // Return to parent container
+      .should("contain", "How to train your dragon")
+      .within(()=>{
+        cy.get("button").click();
+      })
+
     // Get open the profile link on the navbar
     
-    //Click on "Favorited Articles"
+    // Click on "Favorited Articles"
 
     // Get the article "How to train your dragon" and delete from favorites (click fav button)
     
