@@ -6,36 +6,28 @@ describe("User register", () => {
     cy.get("input")
       .should("have.class", "form-control form-control-lg")
       .eq(0)
-      .type("testuser2223@mail.com");
+      .type(""); //Add the email
     cy.get("input")
       .should("have.class", "form-control form-control-lg")
       .eq(1)
-      .type("testuser");
+      .type(""); // Add the password
     cy.get("button").contains("Sign in").click();
   });
 
   it("Add Article to favorite articles list and Delete article", () => {
-    cy.get(".tag-list").contains("dragons").click();
-    cy.wait(2000)
-    cy.get(".article-preview")
-      .contains(".article-meta", "micha")
-      .parent()
-      .should("contain", "How to train your dragon")
-      .within(()=>{
-        cy.get("button").click();
-      })
-    cy.get('.navbar')
-      .contains('testUser2223')
-      .click();
-    cy.get(".articles-toggle")
-      .contains("Favorited Articles")
-      .click();
-    cy.get(".article-preview")
-      .contains("How to train your dragon")
-      .parent()
-      .within(()=>{
-        cy.get("button").click();
-      });
+
+    // Get the tag "Dragons" from the tag list.
+
+    cy.wait(2000) // Just for the exercice, bad practice!
+
+    // Get article "How to train your dragon" by author "micha" and add to favorites (click fav button)
+    
+    // Get open the profile link on the navbar
+    
+    //Click on "Favorited Articles"
+
+    // Get the article "How to train your dragon" and delete from favorites (click fav button)
+    
     cy.reload();
     cy.get("div")
       .should("have.class", "article-preview")

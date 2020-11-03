@@ -21,7 +21,7 @@ describe("Add new Article and delete", () => {
       .should("have.value", "My Test Article for the skillpill"); //article name
     cy.xpath(
       "//body/div[@id='main']/div/div[@class='editor-page']/div[@class='container page']/div[@class='row']/div[@class='col-md-10 offset-md-1 col-xs-12']/form/fieldset/fieldset[2]/input[1]"
-    ).type("Using the xpath plugin"); // waht is the article about
+    ).type("Using the xpath plugin"); // what is the article about
     cy.xpath(
       "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/fieldset[1]/fieldset[3]/textarea[1]"
     ).type("Install xpath with Yar: yarn add cypress-xpath --dev"); //article
