@@ -1,6 +1,8 @@
 describe("User register", () => {
-  it("Log In User", () => {
+  before(() => {
     cy.visit("https://react-redux.realworld.io/#/login?_k=xgdaby");
+  })
+  it("Log In User", () => { 
     cy.get("input")
       .should("have.class", "form-control form-control-lg")
       .eq(0)
@@ -13,23 +15,27 @@ describe("User register", () => {
   });
 
   it("Add Article to favorite articles list and Delete article", () => {
-    cy.get("div > div > a").contains("dragons").click();
-    cy.get("div > a > h1").contains("How to train your dragon");
-    cy.get("button")
-      .should("have.class", "btn btn-sm btn-outline-primary")
-      .contains("2")
+    cy.get(".tag-list").contains("dragons").click();
+    cy.wait(2000)
+    cy.get(".article-preview")
+      .contains(".article-meta", "micha")
+      .parent()
+      .should("contain", "How to train your dragon")
+      .within(()=>{
+        cy.get("button").click();
+      })
+    cy.get('.navbar')
+      .contains('testUser2223')
       .click();
-
-    cy.get("nav > div > ul > li")
-      .should("have.class", "nav-item")
-      .eq(3)
+    cy.get(".articles-toggle")
+      .contains("Favorited Articles")
       .click();
-    cy.get("div > div > ul > li").eq(1).click();
-    cy.get("div > a > h1").contains("How to train your dragon");
-    cy.get("button")
-      .should("have.class", "btn btn-sm btn-primary")
-      .contains("3")
-      .click();
+    cy.get(".article-preview")
+      .contains("How to train your dragon")
+      .parent()
+      .within(()=>{
+        cy.get("button").click();
+      });
     cy.reload();
     cy.get("div")
       .should("have.class", "article-preview")
