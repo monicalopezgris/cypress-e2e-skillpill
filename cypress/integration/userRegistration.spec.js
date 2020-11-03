@@ -4,18 +4,15 @@ describe("User register", () => {
   });
 
   it("Sign Up new user", () => {
-    cy.get("input")
+    cy.get("input[placeholder=Username]")
       .should("have.class", "form-control form-control-lg")
-      .eq(0)
-      .type(""); //put new user name
-    cy.get("input")
+      .type(""); //Type new user name
+    cy.get("input[placeholder=Email]")
       .should("have.class", "form-control form-control-lg")
-      .eq(1)
-      .type("@mail.com"); // put new user email
-    cy.get("input")
+      .type("@mail.com"); // Type new user email
+    cy.get("input[placeholder=Password]")
       .should("have.class", "form-control form-control-lg")
-      .eq(2)
-      .type("testuser");
+      .type(""); // Type password
     cy.get("button").contains("Sign in").click();
   });
 });
